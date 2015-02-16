@@ -1,10 +1,13 @@
 package com.example.com.ytkoff.gre;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.text.NoCopySpan.Concrete;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
  * 
  */
 public class NavigationDrawerFragment extends Fragment {
+	public static final String FILE_NAME = "navigationDrawerConstants";
 	ActionBarDrawerToggle mDrawerToggle;
 	private DrawerLayout mDrawerLayout;
 	private boolean userLearnedDrawer;
@@ -21,6 +25,12 @@ public class NavigationDrawerFragment extends Fragment {
 
 	public NavigationDrawerFragment() {
 		// Required empty public constructor
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
 	}
 
 	@Override
@@ -53,4 +63,19 @@ public class NavigationDrawerFragment extends Fragment {
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 	}
 
+	public void saveToPrefrences(Context context, String preferenceName,
+			String preferenceValue) {
+		SharedPreferences prefrences = context.getSharedPreferences(FILE_NAME,
+				Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = prefrences.edit();
+		editor.putString(preferenceName, preferenceValue);
+		editor.apply();
+	}
+
+	public String readFromPrefrences(Context context, String preferenceName,
+			String defaultValue) {
+		SharedPreferences prefrences = context.getSharedPreferences(FILE_NAME,
+				Context.MODE_PRIVATE);
+		return prefrences.getString(preferenceName, defaultValue);
+	}
 }
