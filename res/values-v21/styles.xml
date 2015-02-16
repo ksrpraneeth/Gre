@@ -1,0 +1,15 @@
+<resources>
+
+    <!--
+        Base application theme for API 21+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 21+ devices.
+    -->
+    <style name="AppBaseTheme" parent="AppTheme.Base">
+
+        <!-- API 21 theme customizations can go here. -->
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="android:colorAccent">@color/accentColor</item>
+    </style>
+
+</resources>
