@@ -1626,7 +1626,8 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020030;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
-        public static final int ic_launcher=0x7f020033;
+        public static final int ic_home=0x7f020033;
+        public static final int ic_launcher=0x7f020034;
     }
     public static final class id {
         public static final int action_bar=0x7f090031;
@@ -1653,6 +1654,7 @@ containing a value of this type.
         public static final int dialog=0x7f090019;
         public static final int disableHome=0x7f09000d;
         public static final int drawer_layout=0x7f090041;
+        public static final int drawer_list=0x7f090043;
         public static final int dropdown=0x7f09001a;
         public static final int edit_query=0x7f090033;
         public static final int end=0x7f09001c;
@@ -1690,6 +1692,7 @@ containing a value of this type.
         public static final int split_action_bar=0x7f090004;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
+        public static final int thumbnail=0x7f090044;
         public static final int title=0x7f090027;
         public static final int toplay=0x7f09003f;
         public static final int up=0x7f090001;
@@ -1749,7 +1752,8 @@ containing a value of this type.
         public static final int activity_main=0x7f030017;
         public static final int app_bar=0x7f030018;
         public static final int fragment_navigation_drawer=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int menuitem=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
     }
     public static final class menu {
         public static final int menu=0x7f0c0000;

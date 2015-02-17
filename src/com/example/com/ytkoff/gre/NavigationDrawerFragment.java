@@ -1,13 +1,19 @@
 package com.example.com.ytkoff.gre;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.text.NoCopySpan.Concrete;
+import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +31,8 @@ public class NavigationDrawerFragment extends Fragment {
 	private boolean userLearnedDrawer;
 	private boolean mFromOnSavedInstance;
 	private View containerview;
+	private RecyclerView recyclerView;
+	private MenuAdapter adapter;
 
 	public NavigationDrawerFragment() {
 		// Required empty public constructor
@@ -46,8 +54,14 @@ public class NavigationDrawerFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_navigation_drawer, container,
-				false);
+		View layout = inflater.inflate(R.layout.fragment_navigation_drawer,
+				container, false);
+		recyclerView = (RecyclerView) layout.findViewById(R.id.drawer_list);
+		adapter = new MenuAdapter(getActivity(), getMenuData());
+
+		recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+		recyclerView.setAdapter(adapter);
+		return layout;
 	}
 
 	public void setUp(int fragmentNavigationDrawer, DrawerLayout drawerlayout,
@@ -91,6 +105,20 @@ public class NavigationDrawerFragment extends Fragment {
 			}
 		});
 
+	}
+
+	public List<MenuList> getMenuData() {
+		int[] imageRes = { R.drawable.ic_home, R.drawable.ic_home,
+				R.drawable.ic_home };
+		String[] titles = { "Home", "Favroites", "About Us" };
+		List<MenuList> menudatalist = new ArrayList<MenuList>();
+		for (int i = 0; i < titles.length & i < imageRes.length; i++) {
+			MenuList menu = new MenuList();
+			menu.setImageResId(imageRes[i]);
+			menu.setTitle(titles[i]);
+			menudatalist.add(menu);
+		}
+		return menudatalist;
 	}
 
 	public void saveToPrefrences(Context context, String preferenceName,

@@ -5,5 +5,7 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="lib" path="D:/android-sdks/android-sdk/extras/android/support/v7/recyclerview/libs/android-support-v7-recyclerview.jar"/>
+	<classpathentry kind="lib" path="C:/Users/KP/Desktop/dspec-0.1.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
