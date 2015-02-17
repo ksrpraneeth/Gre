@@ -18,10 +18,13 @@ import android.view.ViewGroup;
  */
 public class NavigationDrawerFragment extends Fragment {
 	public static final String FILE_NAME = "navigationDrawerConstants";
+	public static final String KEY_USER_LEARNED_DRAWER = "userlearneddrawer";
+
 	ActionBarDrawerToggle mDrawerToggle;
 	private DrawerLayout mDrawerLayout;
 	private boolean userLearnedDrawer;
 	private boolean mFromOnSavedInstance;
+	private View containerview;
 
 	public NavigationDrawerFragment() {
 		// Required empty public constructor
@@ -31,6 +34,12 @@ public class NavigationDrawerFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		userLearnedDrawer = Boolean.valueOf(readFromPrefrences(getActivity(),
+				KEY_USER_LEARNED_DRAWER, "false"));
+		if (savedInstanceState != null) {
+			mFromOnSavedInstance = true;
+
+		}
 	}
 
 	@Override
@@ -41,26 +50,47 @@ public class NavigationDrawerFragment extends Fragment {
 				false);
 	}
 
-	public void setUp(DrawerLayout drawerlayout, Toolbar toolbar) {
+	public void setUp(int fragmentNavigationDrawer, DrawerLayout drawerlayout,
+			Toolbar toolbar) {
 		// TODO Auto-generated method stub
+		containerview = getActivity().findViewById(fragmentNavigationDrawer);
 		mDrawerLayout = drawerlayout;
 		mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerlayout,
 				toolbar, R.string.drawer_open, R.string.drawer_close) {
 
 			@Override
 			public void onDrawerClosed(View drawerView) {
-				// TODO Auto-generated method stub
 				super.onDrawerClosed(drawerView);
+				getActivity().invalidateOptionsMenu();
 			}
 
 			@Override
 			public void onDrawerOpened(View drawerView) {
-				// TODO Auto-generated method stub
 				super.onDrawerOpened(drawerView);
+				if (!userLearnedDrawer) {
+					userLearnedDrawer = true;
+					saveToPrefrences(getActivity(), KEY_USER_LEARNED_DRAWER,
+							userLearnedDrawer + "");
+
+				}
+				getActivity().invalidateOptionsMenu();
 			}
 
 		};
+
+		if (!userLearnedDrawer && !mFromOnSavedInstance) {
+			mDrawerLayout.openDrawer(containerview);
+		}
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
+		mDrawerLayout.post(new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				mDrawerToggle.syncState();
+			}
+		});
+
 	}
 
 	public void saveToPrefrences(Context context, String preferenceName,

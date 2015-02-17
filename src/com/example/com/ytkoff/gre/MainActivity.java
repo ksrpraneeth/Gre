@@ -1,6 +1,5 @@
 package com.example.com.ytkoff.gre;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -21,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 		NavigationDrawerFragment navigationDrawer = (NavigationDrawerFragment) getSupportFragmentManager()
 				.findFragmentById(R.id.fragment_navigation_drawer);
-		navigationDrawer.setUp((DrawerLayout) findViewById(R.id.drawer_layout),
+		navigationDrawer.setUp(R.id.fragment_navigation_drawer,(DrawerLayout) findViewById(R.id.drawer_layout),
 				toolbar);
 	}
 }
