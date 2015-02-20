@@ -1,4 +1,4 @@
-package com.example.com.ytkoff.gre;
+package com.ytkoff.gre;
 
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;

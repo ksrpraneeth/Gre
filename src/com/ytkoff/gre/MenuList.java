@@ -1,4 +1,4 @@
-package com.example.com.ytkoff.gre;
+package com.ytkoff.gre;
 
 public class MenuList {
 	int imageResId;

@@ -1,4 +1,4 @@
-package com.example.com.ytkoff.gre;
+package com.ytkoff.gre;
 
 import java.util.Collections;
 import java.util.List;
@@ -40,8 +40,7 @@ public class MenuAdapter extends
 	@Override
 	public MenuViewHolder onCreateViewHolder(ViewGroup arg0, int arg1) {
 		// TODO Auto-generated method stub
-		View view = inflator.inflate(
-				com.example.com.ytkoff.gre.R.layout.menuitem, arg0, false);
+		View view = inflator.inflate(com.ytkoff.gre.R.layout.menuitem, arg0, false);
 		MenuViewHolder viewholder = new MenuViewHolder(view);
 		return viewholder;
 	}
@@ -55,9 +54,9 @@ public class MenuAdapter extends
 			super(view);
 			// TODO Auto-generated constructor stub
 			title = (TextView) view
-					.findViewById(com.example.com.ytkoff.gre.R.id.title);
+					.findViewById(com.ytkoff.gre.R.id.title);
 			image = (ImageView) view
-					.findViewById(com.example.com.ytkoff.gre.R.id.thumbnail);
+					.findViewById(com.ytkoff.gre.R.id.thumbnail);
 		}
 	}
 
