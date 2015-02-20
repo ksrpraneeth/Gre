@@ -25,7 +25,9 @@ import android.view.ViewGroup;
 public class NavigationDrawerFragment extends Fragment {
 	public static final String FILE_NAME = "navigationDrawerConstants";
 	public static final String KEY_USER_LEARNED_DRAWER = "userlearneddrawer";
-
+	public static final int HOME_POS = 0;
+	public static final int FAVROUITES_POS = 1;
+	public static final int ABOUTUS_POS = 2;
 	ActionBarDrawerToggle mDrawerToggle;
 	private DrawerLayout mDrawerLayout;
 	private boolean userLearnedDrawer;
@@ -33,6 +35,7 @@ public class NavigationDrawerFragment extends Fragment {
 	private View containerview;
 	private RecyclerView recyclerView;
 	private MenuAdapter adapter;
+	private NewContentView Activity;
 
 	public NavigationDrawerFragment() {
 		// Required empty public constructor
@@ -74,6 +77,8 @@ public class NavigationDrawerFragment extends Fragment {
 					public void onClick(View v, int position) {
 						// TODO Auto-generated method stub
 						System.out.println("view clicked " + position);
+						Activity.setNewContentView(position);
+						mDrawerLayout.closeDrawers();
 					}
 				}));
 
@@ -81,10 +86,11 @@ public class NavigationDrawerFragment extends Fragment {
 	}
 
 	public void setUp(int fragmentNavigationDrawer, DrawerLayout drawerlayout,
-			Toolbar toolbar) {
+			Toolbar toolbar, NewContentView Activity) {
 		// TODO Auto-generated method stub
 		containerview = getActivity().findViewById(fragmentNavigationDrawer);
 		mDrawerLayout = drawerlayout;
+		this.Activity = Activity;
 		mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerlayout,
 				toolbar, R.string.drawer_open, R.string.drawer_close) {
 
@@ -206,5 +212,9 @@ public class NavigationDrawerFragment extends Fragment {
 		public void onClick(View v, int position);
 
 		public void onLongClick(View v, int position);
+	}
+
+	public static interface NewContentView {
+		public void setNewContentView(int position);
 	}
 }

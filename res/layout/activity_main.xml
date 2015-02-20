@@ -21,8 +21,6 @@
             android:layout_height="match_parent"
             tools:context="${relativePackage}.${activityClass}" />
 
-        
-
         <fragment
             android:id="@+id/fragment_navigation_drawer"
             android:name="com.ytkoff.gre.NavigationDrawerFragment"
