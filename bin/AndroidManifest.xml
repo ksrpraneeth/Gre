@@ -14,13 +14,20 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme.Base" >
         <activity
-            android:name="com.ytkoff.gre.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ytkoff.gre.worddetails.WordDetails"
+            android:label="@string/title_activity_word_details" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ytkoff.gre.MainActivity" />
         </activity>
     </application>
 

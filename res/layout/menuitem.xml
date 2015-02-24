@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:paddingLeft="72dp"
+        android:paddingLeft="50dp"
         android:text="Sample"
         android:textColor="#696969"
         android:textStyle="bold" />
