@@ -33,14 +33,15 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp" >
 
-                <TextView
+                <com.ytkoff.gre.worddetails.AutoResizeTextView
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="32dp"
-                    android:text="Quaff"
+                    android:maxLines="1"
+                    android:text="Meaning"
                     android:textSize="112sp" />
 
                 <TextView
@@ -120,13 +121,16 @@
                 android:textSize="16sp"
                 android:textStyle="italic" />
 
-            <TextView
+            <com.ytkoff.gre.worddetails.AutoResizeTextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView8"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
+                android:layout_alignRight="@+id/textView8"
                 android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:maxLines="1"
                 android:text="Quaff"
                 android:textSize="112sp" />
 
@@ -134,14 +138,33 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textView11"
-                android:layout_alignParentBottom="true"
-                android:layout_alignRight="@+id/textView21"
-                android:layout_below="@+id/textView21"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="16dp"
+                android:layout_marginTop="20dp"
                 android:gravity="bottom"
-                android:paddingBottom="30dp"
-                android:text="Sounds like cough. When we have a cough, we DRINK cough syrup which is quite tasty actually. " />
+                android:paddingTop="30dp"
+                android:text="Sounds like cough. When we have cough, we DRINK cough syrup which is quite tasty actually. " />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView8"
+                android:layout_alignTop="@+id/textView8"
+                android:text="Mnemonic-" />
         </RelativeLayout>
     </com.ytkoff.gre.worddetails.RevealLayout>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:text="Tap to reveal meaning."
+        android:textColor="#cccccc" />
 
 </RelativeLayout>

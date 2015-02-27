@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+=
 
     <EditText
         android:id="@+id/search_view"
@@ -18,13 +19,16 @@
         android:layout_height="fill_parent"
         android:orientation="vertical" >
 
-        <com.ytkoff.gre.Home.PinnedHeaderListView
-            android:id="@+id/list_view"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp"
-            android:scrollingCache="false" />
+     
+
+            <com.ytkoff.gre.Home.PinnedHeaderListView
+                android:id="@+id/list_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:scrollingCache="false" />
+
     </FrameLayout>
 
 </LinearLayout>

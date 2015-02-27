@@ -1,16 +1,18 @@
 package com.ytkoff.gre;
 
-import com.ytkoff.gre.Aboutus.AboutUs;
-import com.ytkoff.gre.Favourites.FavouritesFragment;
-import com.ytkoff.gre.Home.HomeFragment;
-import com.ytkoff.gre.NavigationDrawerFragment.NewContentView;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.ytkoff.gre.NavigationDrawerFragment.NewContentView;
+import com.ytkoff.gre.Aboutus.AboutUs;
+import com.ytkoff.gre.Favourites.FavouritesFragment;
+import com.ytkoff.gre.Home.HomeFragment;
 
 public class MainActivity extends ActionBarActivity implements NewContentView {
 	Toolbar toolbar;
@@ -29,6 +31,7 @@ public class MainActivity extends ActionBarActivity implements NewContentView {
 				.findFragmentById(R.id.fragment_navigation_drawer);
 		navigationDrawer.setUp(R.id.fragment_navigation_drawer,
 				(DrawerLayout) findViewById(R.id.drawer_layout), toolbar, this);
+		
 	}
 
 	@Override

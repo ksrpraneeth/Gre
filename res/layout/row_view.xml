@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/lay"
+<com.ytkoff.gre.ripplelibrary.RippleView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="48dp"
     android:orientation="vertical"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp" >
+    android:paddingRight="16dp"
+    ripple:rv_type="rectangle"
+    app:rv_rippleDuration="100" xmlns:app="http://schemas.android.com/apk/res/com.ytkoff.gre">
 
     <TextView
         android:id="@+id/row_title"
@@ -14,6 +16,5 @@
         android:paddingBottom="20dp"
         android:paddingTop="16dp"
         android:textColor="@color/color_white"
-        android:textSize="16dp" />
-
-</LinearLayout>
+        android:textSize="16sp" />
+</com.ytkoff.gre.ripplelibrary.RippleView>
